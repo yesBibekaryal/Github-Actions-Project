@@ -40,7 +40,7 @@ jobs:
       run: sudo apt install gitleaks -y
     - name: Gitleaks Code Scan
       run: gitleaks detect source . -r gitleaks-report.json -f json
-      
+       
   test:
     runs-on: self-hosted
     needs: security-check
@@ -120,6 +120,6 @@ jobs:
        uses: docker/build-push-action@v6
        with:
           push: true
-          tags: kubebibek/bankapp:latest
+          tags: kubebibek/bankapp:v1
 
         
