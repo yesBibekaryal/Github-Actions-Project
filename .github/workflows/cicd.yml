@@ -44,7 +44,6 @@ jobs:
   test:
     runs-on: self-hosted
     needs: security-check
-    
     steps:
     - uses: actions/checkout@v4
     - name: Set up JDK 17
@@ -59,7 +58,6 @@ jobs:
   build_project_sonar_scan:
     runs-on: self-hosted
     needs: test
-    
     steps:
     - uses: actions/checkout@v4
     - name: Set up JDK 17
@@ -98,7 +96,6 @@ jobs:
   build_docker_image_and_push:
     runs-on: self-hosted
     needs: build_project_sonar_scan
-    
     steps:
     - uses: actions/checkout@v4
     - name: Download JAR artifact
