@@ -18,7 +18,6 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn compile
-
       
   security-check:
     runs-on: self-hosted
@@ -42,7 +41,6 @@ jobs:
     - name: Gitleaks Code Scan
       run: gitleaks detect source . -r gitleaks-report.json -f json
       
-
   test:
     runs-on: self-hosted
     needs: security-check
@@ -57,7 +55,6 @@ jobs:
         cache: maven
     - name: Unit Test Cases
       run: mvn test
-
 
   build_project_sonar_scan:
     runs-on: self-hosted
@@ -97,7 +94,6 @@ jobs:
       env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ vars.SONAR_HOST_URL }} #OPTIONAL
-
 
   build_docker_image_and_push:
     runs-on: self-hosted
