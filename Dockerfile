@@ -3,6 +3,7 @@ FROM eclipse-temurin:17-jdk-alpine
 EXPOSE 8080
 
 RUN ls 
+RUN mkdir -p /app
 
 ENV APP_HOME /usr/src/app
 
